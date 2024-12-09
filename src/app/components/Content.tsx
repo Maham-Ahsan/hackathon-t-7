@@ -94,6 +94,7 @@ const Content = () => {
               <p className="font-semibold text-gray-700">Price:</p>
               <p className="text-gray-500">$80.00 / day</p>
             </div>
+            
             <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700">
               Rent Now
             </button>

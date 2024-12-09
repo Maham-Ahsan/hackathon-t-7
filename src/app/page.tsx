@@ -1,20 +1,28 @@
-import React from 'react'
-import Content from './components/Content';
-import FilterSidebar from './components/FilterSidebar';
+"use client";
+
+import React from 'react';
+import Link from 'next/link';
 import Hero from './components/Hero';
-import CarCardSection from './components/CarCard';
-// import CarSection from './components/CarSection';
+import Card from './components/Card';
+import RCard from './components/RCard';
 
 const Home = () => {
   return (
     <main>
-    <div className='flex flex-col md:flex-row gap-6 p-6'>
-      <FilterSidebar />
-      <Content />
+      <Hero />
+      <div className="text-gray-500 text-lg mt-4 ml-6">Popular Cars</div>
+      <Card />
+      <div className="text-gray-500 text-lg mt-4 ml-6">Recommendation Cars</div>
+      <RCard />
+      <div className="flex justify-center mt-6">
+        <Link href="/Details">
+          <button className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors">
+            Show More Cars
+          </button>
+        </Link>
       </div>
-     <CarCardSection />
-     </main>
+    </main>
   );
-}
+};
 
-export default Home
+export default Home;

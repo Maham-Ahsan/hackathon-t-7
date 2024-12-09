@@ -2,7 +2,8 @@ import React from "react";
 import { FaGasPump } from "react-icons/fa";
 import { RxCircle } from "react-icons/rx";
 import { MdOutlinePeople } from "react-icons/md";
-import Link from "next/link";
+import { AiOutlineHeart } from "react-icons/ai";
+import { FcLike } from "react-icons/fc";
 
 const cars = [
   {
@@ -23,15 +24,22 @@ const cars = [
     id: 3,
     image: "/images/Car (2).png",
     title: "Rolls-Royce",
-    description: "Luxury",
+    description: "Sedan",
     price: "$96.00/day",
+  },
+  {
+    id: 4,
+    image: "/images/Car (1).png",
+    title: "Nissan GT - R",
+    description: "Sport",
+    price: "$80.00/day",
   },
 ];
 
-const CarCardSection = () => {
+const Card = () => {
   return (
-    <div className="container mx-auto p-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      {cars.map((car) => (
+    <div className="container mx-auto p-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      {cars.map((car, index) => (
         <div
           key={car.id}
           className="rounded-lg shadow-lg bg-white overflow-hidden border border-gray-200 transform hover:scale-105 transition-transform duration-300"
@@ -40,10 +48,15 @@ const CarCardSection = () => {
           <div className="p-4 border-b border-gray-100">
             <h3 className="text-lg font-bold text-gray-800">{car.title}</h3>
             <p className="text-sm text-gray-600">{car.description}</p>
+            {index % 2 === 0 ? (
+              <FcLike className="text-xl" />
+            ) : (
+              <AiOutlineHeart className="text-xl text-gray-500" />
+            )}
           </div>
 
           {/* Car Image */}
-          <div className="h-48 w-full bg-gray-100 flex justify-center items-center">
+          <div className="h-44 w-44 bg-white  flex justify-center items-center ml-5 ">
             <img
               src={car.image}
               alt={car.title}
@@ -70,19 +83,18 @@ const CarCardSection = () => {
 
             {/* Price and Rent Button */}
             <div className="flex justify-between items-center">
-              <p className="text-lg font-semibold text-gray-800">{car.price}</p>
-              <Link href='../
-              payment'>
-              <button className="bg-blue-500 text-white py-2 flex justify-items-centercenter rounded-lg hover:bg-blue-700 transition-colors">
+              <p className="text-md font-semibold text-gray-800">{car.price}</p>
+              <button className="bg-blue-500 text-white py-1 px-2 rounded-lg hover:bg-blue-700 transition-colors">
                 Rent Now
               </button>
-              </Link>
             </div>
           </div>
         </div>
+        
       ))}
+    
     </div>
   );
 };
 
-export default CarCardSection;
+export default Card;
