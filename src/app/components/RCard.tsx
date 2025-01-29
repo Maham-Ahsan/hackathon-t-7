@@ -115,11 +115,11 @@ const RCard = () => {
             {/* Price and Rent Button */}
             <div className="flex justify-between items-center">
               <p className="text-md font-semibold text-gray-800">{car.price}</p>
-              <Link href='../payment'>
+               <Link href='../payment'> 
               <button className="bg-blue-500 text-white py-1 px-2 rounded-lg hover:bg-blue-700 transition-colors">
                 Rent Now
               </button>
-              </Link>
+              </Link> 
             </div>
           </div>
         </div>

@@ -4,7 +4,9 @@ import { RxCircle } from "react-icons/rx";
 import { MdOutlinePeople } from "react-icons/md";
 import Link from "next/link";
 
+
 const cars = [
+  
   {
     id: 1,
     image: "/images/Car.png",
@@ -25,6 +27,47 @@ const cars = [
     title: "Rolls-Royce",
     description: "Luxury",
     price: "$96.00/day",
+  },
+  {
+    id: 4,
+    image: "/images/Car (9).png",
+    title: "CR - V",
+    description: "SUV",
+    price: "$80.00/day",
+  },
+  {
+    id: 5,
+    image: "/images/Car (10).png",
+    title: "MG ZX Exclusive",
+    description: "Hatchback",
+    price: "$76.00/day",
+  },
+  {
+    id: 6,
+    image: "/images/Car (11).png",
+    title: "New MG ZS",
+    description: "SUV",
+    price: "$80.00/day",
+  },
+  {
+    id: 7,
+    image: "/images/Car (12).png",
+    title: "MG ZX Excite",
+    description: "Hatchback",
+    price: "$74.00/day",
+  },
+  {
+    id: 8,
+    image: "/images/Car (13).png",
+    title: "New MG ZS",
+    description: "SUV",
+    price: "$80.00/day",
+  },{
+    id: 9,
+    image: "/images/Car.png",
+    title: "Koenigsegg",
+    description: "Sport",
+    price: "$99.00/day",
   },
 ];
 
@@ -73,9 +116,9 @@ const CarCardSection = () => {
               <p className="text-lg font-semibold text-gray-800">{car.price}</p>
               <Link href='../
               payment'>
-              <button className="bg-blue-500 text-white py-2 flex justify-items-centercenter rounded-lg hover:bg-blue-700 transition-colors">
-                Rent Now
-              </button>
+              <button className="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700">
+              Rent Now
+            </button>
               </Link>
             </div>
           </div>

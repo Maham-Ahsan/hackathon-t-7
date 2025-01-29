@@ -1,10 +1,11 @@
 "use client";
+import React from "react";
+import Link from "next/link";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+import RCard from "./components/RCard";
+import ProductCards from "./ppp/page";
 
-import React from 'react';
-import Link from 'next/link';
-import Hero from './components/Hero';
-import Card from './components/Card';
-import RCard from './components/RCard';
 
 const Home = () => {
   return (
@@ -21,6 +22,14 @@ const Home = () => {
           </button>
         </Link>
       </div>
+      <div className="flex justify-center mt-6">
+      <Link href='/Products'>
+      <button className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+        Products Fetch from Sanity API
+      </button>
+      </Link>
+      </div>
+      <ProductCards />
     </main>
   );
 };

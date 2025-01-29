@@ -1,4 +1,3 @@
-// app/details/page.tsx
 "use client";
 
 import React from 'react';
@@ -20,6 +19,7 @@ const Details = () => {
             Rental Now
           </button>
         </Link>
+        
     </main>
   );
 };

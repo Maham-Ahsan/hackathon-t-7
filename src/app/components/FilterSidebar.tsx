@@ -1,4 +1,4 @@
-// components/FilterSidebar.js
+
 import React from "react";
 
 const FilterSidebar = () => {

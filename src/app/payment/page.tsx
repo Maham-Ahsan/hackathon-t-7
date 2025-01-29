@@ -2,10 +2,13 @@ import Image from 'next/image';
 import { FaCcVisa, FaCcPaypal, FaCheckCircle, FaUser, FaPhone, FaMapMarkerAlt, FaCity } from 'react-icons/fa';
 import { FaCircleDot } from 'react-icons/fa6';
 import RentalSum from '../components/RentalSum';
+import Booking from '../components/Booking';
+import { LuArrowUpDown } from 'react-icons/lu';
+import { form } from 'sanity/structure';
 
 const Checkout = () => {
   return (
-    <div>
+    <div className='mb-4'>
     <RentalSum />
     <div className="bg-gray-50 min-h-screen">
       <div className="container mx-auto p-6">
@@ -66,70 +69,75 @@ const Checkout = () => {
             </div>
 
             {/* Rental Info */}
-            <div>
-              <h1 className="text-gray-500 text-lg">Please Select your Rental Date</h1>
-              <div className="min-h-screen flex items-center justify-center bg-gray-50">
-                <div className="flex flex-col md:flex-col items-center justify-center gap-8 bg-white p-6 rounded-lg shadow-md w-full max-w-5xl">
-                  {/* Pick-Up Section */}
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium mb-2 flex items-center">
-                      <FaCircleDot className="mr-2 text-blue-500" />
-                      Pick-Up
-                    </h3>
-                    <div className="grid grid-row-1 gap-4">
-                      <div>
-                        <label className="block text-lg font-bold mb-1">Locations</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option>Select your city</option>
-                        </select>
+             <div className="container mx-auto px-6">
+                  {/* Booking Section */}
+                  <div className="bg-white p-8 rounded-lg shadow-md mt-8">
+                    <div className="grid grid-cols md:grid-cols-2 items-center gap-6">
+                      {/* Pick-Up Section */}
+                      <div className="col-span-2">
+                        <h3 className="text-lg font-medium mb-4 flex items-center">
+                          <FaCircleDot className="mr-2 text-blue-500" /> Pick-Up
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Locations</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your city</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Date</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your Date</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Time</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your Time</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-lg font-bold mb-1">Date</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option>Select your Date</option>
-                        </select>
+            
+                      {/* Swap Button */}
+                      <div className="flex justify-items-center">
+                        <button className="bg-blue-500 text-white p-4 rounded-full shadow-md hover:bg-blue-600">
+                          <LuArrowUpDown size={20} />
+                        </button>
                       </div>
-                      <div>
-                        <label className="block text-lg font-bold mb-1">Time</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option>Select your Time</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Drop-Off Section */}
-                  <div className="flex-1">
-                    <h3 className="text-lg font-medium mb-2 flex items-center">
-                      <FaCircleDot className="mr-2 text-blue-500" />
-                      Drop-Off
-                    </h3>
-                    <div className="grid grid-cols-1 gap-4">
-                      <div>
-                        <label className="block text-sm font-bold mb-1">Locations</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option className="text-sm">Select your city</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-lg font-bold mb-1">Date</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option>Select your Date</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label className="block text-lg font-bold mb-1">Time</label>
-                        <select className="w-full border rounded-md p-2">
-                          <option>Select your Time</option>
-                        </select>
+            
+                      {/* Drop-Off Section */}
+                      <div className="col-span-2">
+                        <h3 className="text-lg font-medium mb-4 flex items-center">
+                          <FaCircleDot className="mr-2 text-blue-500" /> Drop-Off
+                        </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Locations</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your city</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Date</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your Date</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-lg font-bold mb-1">Time</label>
+                            <select className="w-full border rounded-md p-2">
+                              <option>Select your Time</option>
+                            </select>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="flex items-center justify-center min-h-screen bg-gray-100 ">
   <div className="space-y-10">
     {/* Payment Method */}
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
@@ -257,9 +265,9 @@ const Checkout = () => {
   </div>
 </div>
 </div>
+</div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

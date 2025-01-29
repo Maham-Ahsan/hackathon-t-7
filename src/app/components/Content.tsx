@@ -1,5 +1,7 @@
+'use client'
 import React from "react";
 import Reviews from "./Reviews";
+import { Link } from "sanity/router";
 
 const Content = () => {
   return (
